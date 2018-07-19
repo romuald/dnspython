@@ -62,7 +62,7 @@ class TXTBase(dns.rdata.Rdata):
             if isinstance(value, binary_type):
                 strings.append(value)
             else:
-                strings.append(value.encode())
+                strings.append(value.encode('utf-8'))
         if len(strings) == 0:
             raise dns.exception.UnexpectedEnd
         return cls(rdclass, rdtype, strings)
